@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JobTracker Walkthrough
+
+JobTracker is a full-stack job application tracker built with Next.js, Prisma, and PostgreSQL.
+
+## Features Implemented
+
+### 1. Authentication
+- **Login & Register**: Secure user authentication using NextAuth.js with Credentials provider.
+- **Protected Routes**: Dashboard and job management pages are protected.
+
+### 2. Dashboard
+- **Overview**: View key statistics (Total Applications, Interviews, Offers, Rejections).
+- **Analytics**: Visual bar chart showing monthly application trends.
+
+### 3. Job Management
+- **List View**: View all job applications in a table with filtering and search.
+- **Add Job**: Form to add new job applications with details like position, company, status, etc.
+- **Job Details**: Detailed view of a specific job application.
+- **Edit & Delete**: Update job details or remove applications.
+- **Status Management**: Quickly update job status (Applied -> Interview -> Offer -> Rejected).
+
+### 4. Notes System
+- **Timeline**: Add and view notes for each job application to track progress and details.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js installed
+- PostgreSQL database (e.g., Neon)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Setup
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Configure Database**: Update the `.env` file with your PostgreSQL connection string:
+   ```env
+   DATABASE_URL="postgresql://user:password@host:port/database?sslmode=require"
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **Run Migrations**: Initialize the database schema:
+   ```bash
+   npx prisma migrate dev --name init
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Start the App**: Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+4. **Access the App**: Open http://localhost:3000 in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Verification
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Register**: Create a new account at `/register`.
+2. **Login**: Log in with your credentials.
+3. **Dashboard**: Check the dashboard for empty stats initially.
+4. **Add Job**: Go to "Jobs" -> "Add Job" and create a new entry.
+5. **View Job**: Click on the new job to see details.
+6. **Add Note**: Add a note to the job.
+7. **Update Status**: Change the status and verify the dashboard stats update.
