@@ -21,7 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Job, JobStatus, JobType } from "@prisma/client"
+import { Job, JobStatus } from "@prisma/client"
 import { format } from "date-fns"
 
 export default function JobsPage() {

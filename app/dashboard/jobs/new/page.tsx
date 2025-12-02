@@ -14,7 +14,6 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { JobStatus, JobType } from "@prisma/client"
 
 export default function NewJobPage() {
   const router = useRouter()
@@ -50,7 +49,7 @@ export default function NewJobPage() {
         const data = await res.json()
         setError(data.message || "Failed to create job")
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred. Please try again.")
     } finally {
       setLoading(false)

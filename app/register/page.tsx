@@ -40,7 +40,7 @@ export default function RegisterPage() {
         const data = await res.json()
         setError(data.message || "Registration failed")
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred. Please try again.")
     } finally {
       setLoading(false)

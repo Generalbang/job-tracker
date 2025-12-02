@@ -31,7 +31,7 @@ export default function LoginPage() {
       } else {
         router.push("/dashboard")
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred. Please try again.")
     }
   }
@@ -74,7 +74,7 @@ export default function LoginPage() {
         </CardContent>
         <CardFooter className="flex justify-center">
           <p className="text-sm text-gray-500">
-            Don't have an account? <Link href="/register" className="text-blue-500 hover:underline">Register</Link>
+            Don&apos;t have an account? <Link href="/register" className="text-blue-500 hover:underline">Register</Link>
           </p>
         </CardFooter>
       </Card>

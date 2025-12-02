@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { getServerSession } from "next-auth"
-import { PrismaClient, JobStatus, JobType } from "@prisma/client"
+import { PrismaClient, JobStatus, JobType, Prisma } from "@prisma/client"
 import { z } from "zod"
 import { authOptions } from "../auth/[...nextauth]/route"
 
@@ -35,7 +35,7 @@ export async function GET(req: Request) {
       return NextResponse.json({ message: "User not found" }, { status: 404 })
     }
 
-    const where: any = {
+    const where: Prisma.JobWhereInput = {
       userId: user.id,
     }
 
@@ -56,7 +56,7 @@ export async function GET(req: Request) {
     })
 
     return NextResponse.json(jobs)
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ message: "Something went wrong" }, { status: 500 })
   }
 }

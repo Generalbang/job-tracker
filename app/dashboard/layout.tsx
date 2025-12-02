@@ -2,8 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, Briefcase, PlusCircle, LogOut, User, ChevronUp } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { LayoutDashboard, Briefcase, PlusCircle, LogOut, ChevronUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { signOut, useSession } from "next-auth/react"
 import { 

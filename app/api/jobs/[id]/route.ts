@@ -40,7 +40,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
     }
 
     return NextResponse.json(job)
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ message: "Something went wrong" }, { status: 500 })
   }
 }
@@ -109,7 +109,7 @@ export async function DELETE(req: Request, { params }: { params: Promise<{ id: s
     })
 
     return NextResponse.json({ message: "Job deleted" })
-  } catch (error) {
+  } catch (_error) {
     return NextResponse.json({ message: "Something went wrong" }, { status: 500 })
   }
 }
