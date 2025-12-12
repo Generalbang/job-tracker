@@ -249,7 +249,7 @@ export default function Home() {
               </span>
             </div>
             <p className="text-sm text-slate-600 dark:text-slate-400">
-              © 2024 JobTrack. All rights reserved.
+              © 2025 JobTrack. All rights reserved.
             </p>
           </div>
         </div>
